@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Pemrograman Web Ananda</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a5276;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            border-bottom: 5px solid #f39c12;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #f9e79f;
+        }
+
+        nav {
+            background-color: #2980b9;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            margin: 3px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background-color: #e67e22;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .konten {
+            display: none;
+        }
+
+        .konten.aktif {
+            display: block;
+        }
+
+        h2 {
+            color: #1a5276;
+            border-bottom: 2px solid #1a5276;
+            padding-bottom: 5px;
+        }
+
+        .img-utama {
+            width: 100%;
+            max-width: 500px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid #1a5276;
+            display: block;
+            margin: 15px auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .img-tabel {
+            width: 100px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+
+        .sumber-list {
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        .sumber-list a {
+            color: #1a5276;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        form input[type="text"], form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        form input[type="button"] {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            color: #666;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BENGKEL MOTOR KITA JAYA</h1>
+        <p>Tugas Pemrograman Web Ananda</p>
+    </header>
+
+    <!-- MENU UTAMA -->
+    <nav>
+        <button onclick="buka('home')">Home</button>
+        <button onclick="buka('profil')">Profil</button>
+        <button onclick="buka('products')">Products</button>
+        <button onclick="buka('kontak')">Kontak</button>
+        <button onclick="buka('sumber')">Sumber</button>
+    </nav>
+
+    <div class="container">
+        <!-- HALAMAN HOME -->
+        <div id="home" class="konten aktif">
+            <h2>Home</h2>
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80" class="img-utama" alt="Bengkel Motor">
+            <p>Selamat datang di website Bengkel Motor Kita Jaya! Kami melayani perbaikan dan perawatan sepeda motor untuk umum dan pelajar dengan harga bersahabat.</p>
+        </div>
+
+        <!-- HALAMAN PROFIL -->
+        <div id="profil" class="konten">
+            <h2>Profil Bengkel</h2>
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" class="img-utama" alt="Mekanik Motor">
+            <p>Bengkel ini berdiri sejak tahun 2023 untuk melayani servis motor masyarakat umum dan pelajar.</p>
+            <p><b>Visi:</b> Menjadi bengkel jujur, terpercaya, dan memberikan pelayanan terbaik untuk konsumen.</p>
+        </div>
+
+        <!-- HALAMAN PRODUCTS -->
+        <div id="products" class="konten">
+            <h2>Products & Layanan</h2>
+            <table>
+                <tr>
+                    <th width="5%">No</th>
+                    <th width="25%">Foto</th>
+                    <th width="25%">Nama Layanan</th>
+                    <th width="45%">Keterangan</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <!-- Gambar Service Motor (Mekanik sedang servis) -->
+                    <td><img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=300&q=80" class="img-tabel" alt="Jasa Service Motor"></td>
+                    <td><b>Jasa Service</b></td>
+                    <td>Servis rutin, ganti oli, pembersihan karburator/injeksi, dan cek rem.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <!-- Gambar Repaint Motor -->
+                    <td><img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=300&q=80" class="img-tabel" alt="Jasa Repaint Motor"></td>
+                    <td><b>Jasa Repaint</b></td>
+                    <td>Cat ulang bodi halus, bodi kasar, serta cat velg motor.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <!-- Gambar Tune Up / Mesin Motor -->
+                    <td><img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=300&q=80" class="img-tabel" alt="Jasa Tune Up Motor"></td>
+                    <td><b>Jasa Tune Up</b></td>
+                    <td>Setting ulang mesin dan klep agar tarikan motor kembali enteng.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <!-- Gambar Service Besar / Overhaul -->
+                    <td><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=300&q=80" class="img-tabel" alt="Jasa Service Besar Motor"></td>
+                    <td><b>Jasa Service Besar</b></td>
+                    <td>Bongkar mesin total (overhaul), ganti seker, dan bersihkan ruang bakar.</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <!-- Gambar Remap / Kelistrikan ECU -->
+                    <td><img src="https://images.unsplash.com/photo-1551522435-a13afd1eb663?auto=format&fit=crop&w=300&q=80" class="img-tabel" alt="Jasa Remap ECU Motor"></td>
+                    <td><b>Jasa Remap</b></td>
+                    <td>Setting dan kalibrasi ECU untuk performa maksimal pada motor injeksi.</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- HALAMAN KONTAK -->
+        <div id="kontak" class="konten">
+            <h2>Kontak Kami</h2>
+            <p><b>Alamat:</b> Jl. Merdeka No. 45, Bandung</p>
+            <p><b>No HP / WA:</b> 0812-9999-8888</p>
+            <p><b>Email:</b> kitajayamotor@gmail.fake</p>
+
+            <h3>Kirim Pesan:</h3>
+            <form>
+                <label>Nama:</label><br>
+                <input type="text" placeholder="Masukkan nama Anda..."><br>
+
+                <label>Pesan:</label><br>
+                <textarea rows="4" placeholder="Tuliskan pesan atau keluhan motor Anda..."></textarea><br>
+
+                <input type="button" value="Kirim Pesan" onclick="alert('Pesan berhasil terkirim!')">
+            </form>
+        </div>
+
+        <!-- HALAMAN SUMBER -->
+        <div id="sumber" class="konten">
+            <h2>Sumber Gambar</h2>
+            <p>Daftar sumber link gambar yang digunakan pada website ini (menggunakan Unsplash):</p>
+            <ul class="sumber-list">
+                <li><b>Gambar Home (Bengkel Motor):</b> <a href="https://unsplash.com/photos/1558981403-c5f9899a28bc" target="_blank">Lihat di Unsplash</a></li>
+                <li><b>Gambar Profil (Mekanik Motor):</b> <a href="https://unsplash.com/photos/1581092160607-ee22621dd758" target="_blank">Lihat di Unsplash</a></li>
+                <li><b>Gambar Jasa Service:</b> <a href="https://unsplash.com/photos/1486006920555-c77dce18193b" target="_blank">Lihat di Unsplash</a></li>
+                <li><b>Gambar Jasa Repaint:</b> <a href="https://unsplash.com/photos/1563720223185-11003d516935" target="_blank">Lihat di Unsplash</a></li>
+                <li><b>Gambar Jasa Tune Up:</b> <a href="https://unsplash.com/photos/1568772585407-9361f9bf3a87" target="_blank">Lihat di Unsplash</a></li>
+                <li><b>Gambar Jasa Service Besar:</b> <a href="https://unsplash.com/photos/1619642751034-765dfdf7c58e" target="_blank">Lihat di Unsplash</a></li>
+                <li><b>Gambar Jasa Remap ECU:</b> <a href="https://unsplash.com/photos/1551522435-a13afd1eb663" target="_blank">Lihat di Unsplash</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Bengkel Motor Kita Jaya - Tugas Pemrograman Web Ananda</p>
+    </footer>
+
+    <!-- JAVASCRIPT NAVIGASI -->
+    <script>
+        function buka(id) {
+            var semuaKonten = document.getElementsByClassName('konten');
+            for (var i = 0; i < semuaKonten.length; i++) {
+                semuaKonten[i].classList.remove('aktif');
+            }
+            document.getElementById(id).classList.add('aktif');
+        }
+    </script>
+
+</body>
+</html>
